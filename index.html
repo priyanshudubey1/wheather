@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="heading">
+   
+            <h1>THE WEATHER <br>FORECASTING</h1>
+            <div class="about">
+              <button id="aa"><h2><a href="about.html"><img src="https://cdn-icons-png.flaticon.com/128/13052/13052751.png" height="50px" width="50px" alt="about" title="about"></a></h2></button>
+              <button id="ab"><h2><a href=""> <img src="https://cdn-icons-png.flaticon.com/128/13782/13782136.png" height="50px" width="50px"  alt="home" title="about"></a></h2></button>
+              <button id="ac"><h2><a href="clock.html"><img src="https://cdn-icons-png.flaticon.com/128/2784/2784459.png"height="50px" width="50px" alt="live clock" title="live clock"></a></h2></button>
+              <button id="ad"><h2><a href="contact.html"><img src="https://cdn-icons-png.flaticon.com/128/4370/4370113.png"height="50px" width="50px" alt="contact us " title="contact us"></a></h2></button>
+            
+            </div>
+          
+            <!-- <img src="" alt="" id="image1">  -->
+        </div>
+        
+         
+    </header>
+    <main>
+        <div class="card">
+            <div class="search">
+                <input type="text" placeholder="Enter city name " spellcheck="false" title="enter city name">
+                <button><img src="https://cdn-icons-png.flaticon.com/128/10469/10469570.png" title="search" ></button>
+            </div>
+                <div class="error">
+                    <p>Invalid City Name or Check Spelling</p>
+                </div>
+            <div class="weather">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/024/825/195/small/3d-weather-icon-day-with-rain-free-png.png" class="weather-icon">        
+                <h1 class="temp">22°c</h1>        
+                <h2 class="city">New York</h2>
+                <div class="details">
+                    <div class="col">
+            
+                         <img src="https://cdn-icons-png.flaticon.com/128/6631/6631820.png" alt="humidity" title="humidity" height="50px">
+                         
+                        <div>
+                            <p class="humidity">50%</p>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3579/3579552.png"  height="50px">
+                        <div>
+                            <p class="Wind">15 km/h</p>
+                            <p>Wind Speed</p>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+        </div> 
+        
+        <script>
+        
+            const apikey = "62fadb22f3c3ce9d0c989709f4a0e602";
+            const apiurl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
+            
+            const searchBox = document.querySelector(".search input");
+            const searchBtn = document.querySelector(".search button");
+            const weatherIcon = document.querySelector(".weather-icon")
+        
+            async function checkweather(city){
+                const response = await fetch(apiurl + city + `&appid=${apikey}`);
+                
+                if(response.status == 404){
+                    document.querySelector(".error").style.display = "block";
+                    document.querySelector(".weather").style.display = "none";
+                }else{
+                    var data = await response.json();
+        
+        document.querySelector(".city").innerHTML = data.name;
+        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c" ;
+        document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+        // document.querySelector(".wind").innerHTML = data.wind.speed +"km/h";
+       
+        
+        if(data.weather[0].main == "Clouds"){
+        weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/4834/4834559.png";
+        }
+        else if (data.weather[0].main == "Clear"){
+        weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/7865/7865939.png";
+        }
+        else if (data.weather[0].main == "Rain"){
+        weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/1146/1146858.png";
+        }
+        else if (data.weather[0].main == "Drizzle"){
+        weatherIcon.src = "https://cdn-icons-png.flaticon.com/256/4837/4837678.png";
+        }
+        else if (data.weather[0].main == "Mist"){
+        weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/2264/2264658.png";
+        }
+        
+        document.querySelector(".weather").style.display = "block";
+        document.querySelector(".error").style.display = "none";
+        
+                }
+        
+            }
+        
+        
+            searchBtn.addEventListener("click", ()=>{
+                checkweather(searchBox.value);
+         
+            })
+            
+        
+        
+        </script>
+
+    </main>
+    <section>
+        <div class="para">
+            <p >
+               WELCOME TO OUR WEB APP
+            </p>
+        </div>
+    </section>
+    
+
+
+
+<footer>
+    <!-- <section class="footer"> -->
+        <section class="footer">
+            <h3>The Weather Forecasting </h3>
+            <div class="social">
+              <a href="1"><i class="fab fa-instagram"><img src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png"  height="40px" width="40px" alt=""></i></a>
+              <a href="2"><i class="fab fa-snapchat"><img src="https://cdn-icons-png.flaticon.com/128/3670/3670166.png"  height="40px" width="40px" alt=""></i></a>
+              <a href="2"><i class="fab fa-twitter"><img src="https://cdn-icons-png.flaticon.com/128/5969/5969020.png" height="40px" width="40px" alt=""></i>
+            </a>
+              <a href=""><i class="fab fa-facebook-f"><img src="https://cdn-icons-png.flaticon.com/128/3670/3670124.png"  height="40px" width="40px" alt=""></i></a>
+            </div>
+            <!-- <ul class="list">
+              <li>
+                <a href="#">Terms</a>
+              </li>
+              <li>
+                <a href="#">Privacy Policy</a>
+              </li>
+            </ul> -->
+            <p class="copyright">© 2023 The Weather Forecasting. All Rights Reserved.</p>
+          </section>
+        
+
+      <!-- </section> -->
+    
+</footer>
+</body>
+</html>

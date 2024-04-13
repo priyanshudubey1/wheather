@@ -1,0 +1,304 @@
+*{
+     margin: 0;
+     padding: 0;
+     font-family: 'Poppins', sans-serif;
+     box-sizing: border-box;
+}
+body{
+    background-image: url(https://r4.wallpaperflare.com/wallpaper/455/771/723/sunrise-cloudy-weather-waves-red-sandy-beach-beautiful-landscape-wallpapers-for-desktop-computers-laptop-tablet-and-mobile-phones-3840%C3%972400-wallpaper-40903579ef36aec3f86f87e6fb160488.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:100% 100%;
+    min-height: 100vh; 
+    /* display: flex;
+    flex-direction: column; */
+
+}
+.heading{ 
+    margin-top: 0;
+    width:100%;
+    max-width: 100vw;
+    background:rgb(31,31,31);
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+.heading h1{
+    
+    text-align: left;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight:bold;
+    font-size:2vw;
+    color: rgb(241, 135, 106);
+    margin-left: 5vw;
+    text-shadow: -1px 0 rgb(0, 0, 0), 0 2px rgb(0, 0, 0), 1px 0 rgb(0, 0, 0), 0 -3px rgb(0, 0, 0); 
+  
+}
+
+.card{
+    width:90%;
+    max-width: 100vw;
+    background:  rgb(241, 135, 106);
+    background: transparent ;
+    backdrop-filter: blur(20px); 
+    margin: 100px auto 0;
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: center;
+    box-shadow:  10px 10px 20px rgb(26, 39, 44);
+   
+
+}
+.search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.search input{
+    border: 0;
+    outline: 0;
+    background: rgb(31,31,31);
+    color:#aabbb9;
+    padding: 10px 25px;
+    height: 60px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+
+}
+.search button{
+    border: 0;
+    outline: 0;
+    background:rgb(31, 31, 31);
+    border-radius:50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+.search button img{
+    width: 30px;
+
+}
+.weather-icon{
+    width: 170px;
+    margin-top: 30px;
+
+}
+.weather h1{
+    font-size: 80px;
+    font-weight: 500;
+}
+.weather h2{
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -10px;
+
+}
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20 20px;
+    margin-top: 70px;
+
+}
+.col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+
+}
+.col img{
+    width: 40px;
+    margin-right: 10px;
+}
+.humidity, .wind{
+    font-size: 28px;
+    margin-top: -6px;
+    
+}
+.weather{
+    display: none;
+}
+.error{
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
+.about{
+     margin-left:50vw;
+    /* margin-right: 25vw; */
+     
+    /* display: flex;
+    flex-direction: row; */
+    /* padding: 5vw;
+    padding-top: 10vh; */
+    justify-content: space-between;
+    float: right;
+}
+#aa  {
+    background: transparent;
+    border: none;
+    margin: 1vw;
+    transition: all ease 0.2s;
+}
+#aa:active{
+  scale: 0.9;
+
+
+}
+#ab:active{
+  scale: 0.9;
+
+
+}
+#ac:active{
+  scale: 0.9;
+
+
+}
+#ad:active{
+  scale: 0.9;
+
+
+}
+#ab{
+    background: transparent;
+    border: none;
+    margin: 1vw;
+    transition: all ease 0.2s;
+}
+
+#ac{
+    background: transparent;
+    border: none;
+    margin: 1vw;
+    transition: all ease 0.2s;
+}
+#ad{
+    background: transparent;
+    border: none;
+    margin: 1vw;
+    transition: all ease 0.2s;
+}
+.footer {
+  text-align: center;
+  margin-top: 80vh;
+  position: static;
+  /* border-top-right-radius: 5vw;
+  border-top-left-radius: 5vw; */
+  background:rgb(31,31,31);
+ /* top: 50%;
+  left: 50%; */
+   /* padding-top :10px;
+   bottom: 0%;  */
+   max-width: 100vw;
+   max-height: 50vh;
+   bottom: 0;
+   box-shadow:  10px 10px 20px rgb(26, 39, 44);
+ 
+  /* border-radius: 6px; */
+}
+.footer h3{
+   color: rgb(241, 135, 106);
+   text-shadow: -2px 0 rgb(0, 0, 0), 0 2px rgb(0, 0, 0), 3px 0 rgb(0, 0, 0), 0 -3px rgb(0, 0, 0); 
+}
+footer .social {
+  text-align: center;
+  size: 10%;
+  
+  color: #4b4c4d;
+}
+.footer .social a {
+  font-size: 24px;
+  color: inherit;
+  border: 1px solid #ccc;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  margin: 10px 8px;
+  opacity: 0.75;
+}
+.footer .social a:hover {
+  opacity: 0.9;
+}
+.footer ul {
+  margin-top: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+.footer ul a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+}
+.footer ul li {
+  display: inline-block;
+  padding: 0 15px;
+}
+.footer ul a:hover {
+  opacity: 1;
+}
+.footer .copyright {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+}
+
+ .para{
+
+  width:50%;
+  max-width: 100vw;
+  /* background: linear-gradient(135deg,#097e87, #5b548a); */
+  /* background: transparent; */
+  color: #000000;
+  margin: 100px auto 0;
+  border-radius:none;
+  padding: 40px 35px;
+  text-align: center;
+  /* box-shadow:  10px 10px 20px rgb(26, 39, 44);
+  */
+ }
+ .para p{
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight:bold;
+  color:rgb(235,110,76);
+
+  text-shadow: -1px 0 rgb(0, 0, 0), 0 1px rgb(0, 0, 0), 1px 0 rgb(0, 0, 0), 0 -1px rgb(0, 0, 0); 
+
+  text-align: center;
+  font-size: 3em;
+  border-right: 5px solid;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: 
+          typing 2s steps(19),
+          cursor .4s step-end infinite alternate;
+          ;
+  flex-direction: row;
+  flex-wrap: wrap;       
+          
+ }
+ /* cursor blinking */
+ @keyframes cursor{
+    50% { border-color:transparent}
+
+  }
+  /* typing effect */
+  @keyframes typing{
+    from{width:0}
+  }
